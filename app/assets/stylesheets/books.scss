@@ -1,0 +1,47 @@
+.library {
+  margin: 0 auto;
+  width: 45%;
+  border: 3px solid brown;
+  border-radius: 15px;
+  padding-bottom: 20px;
+
+  .books-table {
+    max-height: 300px;
+    overflow-y: auto;
+
+    td:hover {
+      cursor: pointer;
+    }
+  }
+
+  .book-details {
+    .description {
+      max-height: 100px;
+      overflow-y: auto;
+    }
+  }
+
+  .table-layout {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .table-cell {
+    display: table-cell;
+    text-align: center;
+  }
+
+  .table-cell:first-child {
+    width: 60%;
+  }
+
+  .table-cell:last-child {
+    vertical-align: middle;
+    width: 40%;
+  }
+
+  tr:not(:last-child) {
+      height: 10px;
+  }
+}
