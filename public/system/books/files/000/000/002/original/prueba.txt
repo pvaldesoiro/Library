@@ -1,0 +1,3 @@
+nombre;telefono
+pablo;666666666
+arnau;999999999

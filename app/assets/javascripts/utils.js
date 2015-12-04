@@ -1,3 +1,7 @@
-var isChrome = () => navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+var isChrome = function() {
+  return navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+}
 
-var isSafari = () => navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+var isSafari = function() {
+  return navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+}
