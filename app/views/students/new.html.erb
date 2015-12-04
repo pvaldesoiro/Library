@@ -1,0 +1,17 @@
+<span class="text-center">
+  <%= form_for(@student) do |f| %>
+    <div class="field">
+      <%= f.label :code %><br>
+      <%= f.text_field :code, required: true %>
+    </div>
+
+    <br>
+    <div class="actions">
+      <%= link_to 'Back to Library', root_path, class: 'btn btn-danger' %>
+      &nbsp;
+      <%= f.submit 'Add Student', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+
+
+</span>

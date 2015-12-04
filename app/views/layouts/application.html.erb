@@ -7,8 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
 
-<%= yield %>
-
+<div class="container">
+  <div class="row text-center main-container">
+    <div class="col-lg-3">
+    <% if school_signed_in? %>
+      <% if !current_page?(new_book_path) %>
+        <%= link_to 'Upload new book', new_book_path, class: 'btn btn-warning pull-left thin-btn' %>
+        <%= link_to 'Add new student', new_student_path, class: 'btn btn-warning pull-left thin-btn' %>
+      <% end %>
+    <% elsif !current_page?(new_school_registration_path) %>
+      <%= link_to 'Register school', new_school_registration_path, class: 'btn btn-primary pull-left top-btn' %>
+    <% end %>
+    </div>
+    <div class="col-lg-6">
+      <h1 class="title">The Library</h1>
+    </div>
+    <div class="col-lg-3">
+    <% if school_signed_in? %>
+      <%= link_to "Logout", destroy_school_session_path, method: :delete, class: 'btn btn-danger pull-right top-btn' %>
+    <% elsif !current_page?(new_school_session_path) %>
+      <%= link_to 'Login as school', new_school_session_path, class: 'btn btn-success pull-right top-btn' %>
+    <% end %>
+    </div>
+  </div>
+  <div class="library row">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "books";
+
+.main-container {
+  margin: 0 auto;
+  width: 45%;
+}
+
+.devise-form {
+  text-align: center;
+}
+
+.top-btn {
+  margin-top: 20px;
+}
+
+.thin-btn {
+  margin-top: 7px;
+  line-height: 10px;
+}
+
+input[type="file"] {
+  display: inline;
+}
