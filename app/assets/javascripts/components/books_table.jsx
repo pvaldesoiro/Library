@@ -3,6 +3,12 @@ class BooksTable extends React.Component {
     super(props);
   }
 
+  foundInSearch(book, search) {
+    return (book.title.toLowerCase().indexOf(search.toLowerCase()) === -1 &&
+            book.author.toLowerCase().indexOf(search.toLowerCase()) === -1 &&
+            book.isbn.toLowerCase().indexOf(search.toLowerCase()) === -1)
+  }
+
   render() {
     return(
       <div className="books-table col-lg-7">
@@ -10,9 +16,7 @@ class BooksTable extends React.Component {
                           table-condensed">
           <tbody>
             { this.props.books.map(function(book) {
-              if (book.title.indexOf(this.props.filterText) === -1 &&
-                  book.author.indexOf(this.props.filterText) === -1 &&
-                  book.isbn.indexOf(this.props.filterText) === -1)
+              if (this.foundInSearch(book, this.props.filterText))
                 return null;
               else
                 return <BookRow key={book.id} book={book}
