@@ -6,7 +6,7 @@ class BooksTable extends React.Component {
   foundInSearch(book, search) {
     return (book.title.toLowerCase().indexOf(search.toLowerCase()) === -1 &&
             book.author.toLowerCase().indexOf(search.toLowerCase()) === -1 &&
-            book.isbn.toLowerCase().indexOf(search.toLowerCase()) === -1)
+            book.isbn.toLowerCase().indexOf(search.toLowerCase()) === -1);
   }
 
   render() {

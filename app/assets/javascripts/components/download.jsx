@@ -30,9 +30,9 @@ class Download extends BaseComponent {
       } else {
         window.open(data.download);
       }
-      this.setState({requestResponse: 'ok'})
+      this.setState({requestResponse: 'ok'});
     } else {
-      this.setState({requestResponse: 'error'})
+      this.setState({requestResponse: 'error'});
     }
   }
 
