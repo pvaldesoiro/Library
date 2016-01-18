@@ -14,18 +14,18 @@ class Books extends BaseComponent {
 
   render() {
     return(
-        <span>
-          <h2 className="text-center">
-            {this.state.selected_book ? this.state.selected_book.title : 'Books'}
-          </h2>
-          { this.state.selected_book ?
-            <BookDetails book={this.state.selected_book}
-                         handleToggle={this.handleToggle} />
-            :
-            <BookIndex books={this.state.books}
-                       handleToggle={this.handleToggle}/>
-          }
-        </span>
+      <span>
+        <h2 className="text-center">
+          {this.state.selected_book ? this.state.selected_book.title : 'Books'}
+        </h2>
+        { this.state.selected_book ?
+          <BookDetails book={this.state.selected_book}
+                       handleToggle={this.handleToggle} />
+          :
+          <BookIndex books={this.state.books}
+                     handleToggle={this.handleToggle}/>
+        }
+      </span>
     );
   }
 }
